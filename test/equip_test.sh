@@ -165,6 +165,12 @@ setupNetwork() {
     fi
 }
 
+setupRecord() {
+    if [ "$(get_config RECORD)" != "yes" ]; then
+        disable /home/mp4record
+    fi
+}
+
 complete() {
     log "complete..."
     mv $dr/equip_test.sh $dr/equip_test-moved.sh
@@ -180,4 +186,5 @@ setupFTP
 setupHTTP
 setupRTSP
 setupNetwork
+setupRecord
 complete
