@@ -45,6 +45,7 @@ enableScript() {
 bootstrap() {
     disable /home/timeout.g726
     disable /home/welcome.g726
+    cp -R /home/hd1/test/scripts /home
 }
 
 setupRootPassword() {
