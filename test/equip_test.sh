@@ -157,6 +157,7 @@ setupNetwork() {
     ntp_server=$(get_config NTP_SERVER)
     if [ -n "$ntp_server" ]; then
         echo "#!/bin/sh" > /etc/init.d/S91NTP
+        echo "sleep 30" >> /etc/init.d/S91NTP
         echo "ntpd -q -p ${ntp_server}" >> /etc/init.d/S91NTP
         chmod 755 /etc/init.d/S91NTP
     else
